@@ -35,7 +35,7 @@ class ProductsShoppingController extends Controller
         //
         $productsShopping = new products_shopping;
         $productsShopping->product_id = $request->product_id;
-        $productsShopping->shopping_id = $request->shopping_id;
+        $productsShopping->buy_id = $request->buy_id;
         $productsShopping->save();
         return response()->json($productsShopping, 201);
     }
