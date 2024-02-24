@@ -14,6 +14,10 @@ class BuyController extends Controller
     public function index()
     {
         //
+        $buys = Buy::all();
+        // manda una respuesta en json sobre la lista del productos
+        return response()->json($buys);
+
     }
 
     /**
@@ -30,6 +34,11 @@ class BuyController extends Controller
     public function store(Request $request)
     {
         //
+        $buy = new Buy;
+        $buy->name = $request->name;
+        $buy->totalPrice = $request->totalPrice;
+        $buy->save();
+        return response()->json($buy, 201);
     }
 
     /**

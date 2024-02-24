@@ -22,4 +22,7 @@ Route::get('/products', 'App\Http\Controllers\ProductController@index');
 Route::post('/products', 'App\Http\Controllers\ProductController@store');
 
 Route::get('/productsShopping', 'App\Http\Controllers\ProductsShoppingController@index');
+Route::post('/productsShopping', 'App\Http\Controllers\ProductController@store');
 
+Route::get('/buys', 'App\Http\Controllers\BuyController@index');
+Route::post('/buys', 'App\Http\Controllers\BuyController@store');
