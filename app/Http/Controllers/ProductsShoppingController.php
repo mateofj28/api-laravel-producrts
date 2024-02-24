@@ -14,6 +14,9 @@ class ProductsShoppingController extends Controller
     public function index()
     {
         //
+        $productsShopping = products_shopping::all();
+        // manda una respuesta en json sobre la lista del productos
+        return response()->json($productsShopping);
     }
 
     /**
@@ -30,12 +33,17 @@ class ProductsShoppingController extends Controller
     public function store(Request $request)
     {
         //
+        $productsShopping = new products_shopping;
+        $productsShopping->product_id = $request->product_id;
+        $productsShopping->shopping_id = $request->shopping_id;
+        $productsShopping->save();
+        return response()->json($productsShopping, 201);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(products_shopping $products_shopping)
+    public function show(products_shopping $productsShoppings_shopping)
     {
         //
     }
@@ -43,7 +51,7 @@ class ProductsShoppingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(products_shopping $products_shopping)
+    public function edit(products_shopping $productsShoppings_shopping)
     {
         //
     }
@@ -51,7 +59,7 @@ class ProductsShoppingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, products_shopping $products_shopping)
+    public function update(Request $request, products_shopping $productsShoppings_shopping)
     {
         //
     }
@@ -59,7 +67,7 @@ class ProductsShoppingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(products_shopping $products_shopping)
+    public function destroy(products_shopping $productsShoppings_shopping)
     {
         //
     }
