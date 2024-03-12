@@ -26,3 +26,4 @@ Route::post('/productsShopping', 'App\Http\Controllers\ProductsShoppingControlle
 
 Route::get('/buys', 'App\Http\Controllers\BuyController@index');
 Route::post('/buys', 'App\Http\Controllers\BuyController@store');
+Route::get('/buys', 'App\Http\Controllers\BuyController@show');

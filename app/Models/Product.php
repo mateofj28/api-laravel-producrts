@@ -11,6 +11,6 @@ class Product extends Model
 
     public function shopping()
     {
-        return $this->belongsToMany(Buy::class);
+        return $this->belongsToMany(Buy::class, 'products_shoppings', 'buy_id', 'product_id');
     }
 }

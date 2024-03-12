@@ -47,6 +47,20 @@ class BuyController extends Controller
     public function show(Buy $buy)
     {
         //
+
+        $buys = Buy::all();
+
+        $arrayAnswer = $buys->map(function($buy){
+            return [
+                'message' => 'buy details',
+                'buy' => $buy,
+                'products' => $buy->products
+            ];
+        })->all();
+
+        
+
+        return response()->json($arrayAnswer);   
     }
 
     /**

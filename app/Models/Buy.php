@@ -12,6 +12,6 @@ class Buy extends Model
     // una compra tiene varios productos
     public function products()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class, 'products_shoppings', 'buy_id', 'product_id');
     }
 }
